@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.jeff_media</groupId>
 	<artifactId>ChestSortAPIExample</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>ChestSortAPIExample</name>
 	<description>An example plugin to show how to use the ChestSortAPI</description>
 
@@ -33,6 +33,19 @@
 					<finalName>ChestSortAPIExample</finalName>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -51,13 +64,21 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.15.2-R0.1-SNAPSHOT</version>
+			<version>1.16.1-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>de.jeff_media</groupId>
-			<artifactId>ChestSort</artifactId>
-			<version>8.9</version>
+			<artifactId>ChestSortAPI</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>jeff-ftp</id>
+			<url>ftps://ftp.jeff-media.de/maven2</url>
+		</repository>
+	</distributionManagement>
+
 </project>

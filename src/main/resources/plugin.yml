@@ -7,3 +7,5 @@ author: mfnalex
 website: https://www.chestsort.de
 database: false
 softdepend: [ChestSort]
+commands:
+  chestsorttest:
